@@ -6,8 +6,8 @@ import javax.persistence.Id;
 import javax.persistence.Table;
 
 @Entity
-@Table(name="professor")
-public class Professor {
+@Table(name="escola")
+public class Escola {
 	
 	@Id
 	private String id;
@@ -15,17 +15,16 @@ public class Professor {
 	@Column
 	private String nome;
 
-	public Professor(String id, String nome) {
+	public Escola(String id, String nome) {
 		super();
 		this.id = id;
 		this.nome = nome;
 	}
 
-	public Professor() {
+	public Escola() {
 		super();
 		// TODO Auto-generated constructor stub
 	}
-	
 
 	public String getId() {
 		return id;
@@ -45,13 +44,8 @@ public class Professor {
 
 	@Override
 	public String toString() {
-		return "Professor [id=" + id + ", nome=" + nome +"]";
+		return "Escola [id=" + id + ", nome=" + nome + "]";
 	}
-	
-
-	
-	
-	
 	
 	
 	

@@ -30,8 +30,6 @@ public class AlunoDAO implements DAOInterface<Aluno, String>{
 	}
 	
 	
-	
-
 	public void salvar(Aluno aluno) {
 		iniciarConexao();
 		em.persist(aluno);
@@ -40,19 +38,24 @@ public class AlunoDAO implements DAOInterface<Aluno, String>{
 		
 	}
 
-	public void atualizar(Aluno entity) {
-		// TODO Auto-generated method stub
+	public void atualizar(Aluno aluno) {
+		iniciarConexao();
+		em.merge(aluno);
+		fecharConexao();
 		
 	}
 
 	public Aluno buscarPorId(String id) {
-		// TODO Auto-generated method stub
+		iniciarConexao();
+		/// código para buscar um aluno
+		fecharConexao();
 		return null;
 	}
 
-	public void deletar(Aluno entity) {
-		// TODO Auto-generated method stub
-		
+	public void deletar(Aluno aluno) {
+		iniciarConexao();
+		em.remove(aluno);
+		fecharConexao();
 	}
 
 	public List<Aluno> buscarTodos() {
