@@ -6,16 +6,16 @@ import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
 import javax.persistence.Persistence;
 
-import br.edu.ifal.systemifal.modelo.Aluno;
+import br.edu.ifal.systemifal.modelo.Disciplina;
 
-public class AlunoDAO implements DAOInterface<Aluno, String>{
+public class DisciplinaDAO implements DAOInterface<Disciplina, String>{
 	
 	
 	private final String PERSISTENCE_UNIT_NAME = "psunit1";
 	private EntityManagerFactory factory;
 	private EntityManager em;
 	
-	public AlunoDAO() {
+	public  DisciplinaDAO () {
 		factory = Persistence.createEntityManagerFactory(PERSISTENCE_UNIT_NAME);
 	}
 	
@@ -30,35 +30,35 @@ public class AlunoDAO implements DAOInterface<Aluno, String>{
 	}
 	
 	
-	public void salvar(Aluno aluno) {
+	public void salvar(Disciplina disciplina) {
 		iniciarConexao();
-		em.persist(aluno);
+		em.persist(disciplina);
 		fecharConexao();
 		
 		
 	}
 
-	public void atualizar(Aluno aluno) {
+	public void atualizar(Disciplina disciplina) {
 		iniciarConexao();
-		em.merge(aluno);
+		em.merge(disciplina);
 		fecharConexao();
 		
 	}
 
-	public Aluno buscarPorId(String id) {
+	public Disciplina buscarPorId(String id) {
 		iniciarConexao();
-		Aluno aluno = em.find(Aluno.class, id);
+		/// código para buscar um aluno
 		fecharConexao();
-		return aluno;
+		return null;
 	}
 
-	public void deletar(Aluno aluno) {
+	public void deletar(Disciplina disciplina) {
 		iniciarConexao();
-		em.remove(aluno);
+		em.remove(disciplina);
 		fecharConexao();
 	}
 
-	public List<Aluno> buscarTodos() {
+	public List<Disciplina> buscarTodos() {
 		// TODO Auto-generated method stub
 		return null;
 	}
@@ -68,7 +68,7 @@ public class AlunoDAO implements DAOInterface<Aluno, String>{
 		
 	}
 
-		
+
 	
 
 }
