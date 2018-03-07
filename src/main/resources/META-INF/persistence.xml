@@ -6,11 +6,12 @@
   <persistence-unit name="psunit1">
  	
 		<provider>org.hibernate.jpa.HibernatePersistenceProvider</provider>
-		<class>br.edu.ifal.schoolsystem.modelo.Aluno</class>
-		<class>br.edu.ifal.schoolsystem.modelo.Professor</class>
-		<class>br.edu.ifal.schoolsystem.modelo.Disciplina</class>
-		<class>br.edu.ifal.schoolsystem.modelo.Curso</class>
-		<class>br.edu.ifal.schoolsystem.modelo.Escola</class>
+		<class>br.edu.ifal.systemifal.modelo.Aluno</class>
+		<class>br.edu.ifal.systemifal.modelo.Professor</class>
+		<class>br.edu.ifal.systemifal.modelo.Disciplina</class>
+		<class>br.edu.ifal.systemifal.modelo.Curso</class>
+		<class>br.edu.ifal.systemifal.modelo.Escola</class>
+		<class>br.edu.ifal.systemifal.modelo.Nota</class>
 		
         <properties>
         	<property name="hibernate.connection.driver_class" value="com.mysql.jdbc.Driver"/>
