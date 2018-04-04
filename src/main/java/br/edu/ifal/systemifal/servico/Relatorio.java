@@ -34,7 +34,18 @@ public class Relatorio {
 				.collect(Collectors.toList());
 		
 		Collections.reverse(notasOrdemDecrescente);
+		
+		//System.out.println(notasOrdemDecrescente.toString());
+		
+		//this.top3Notas = notasOrdemDecrescente.subList(0,3);
+		
+		for (int i= 0; i < 3; i++) {
+			if (notasOrdemDecrescente.size() > i) {
+				this.top3Notas.add(notasOrdemDecrescente.get(i)); 
+			}
+		}
 	}
+	
 
 	public double getMaiorNota() {
 		return maiorNota;
@@ -43,6 +54,12 @@ public class Relatorio {
 	public double getMenorNota() {
 		return menorNota;
 	}
+
+	public List<Nota> getTop3Notas() {
+		return top3Notas;
+	}
+
+	
 	
 	
 	
