@@ -1,26 +1,29 @@
 package br.edu.ifal.systemifal.modelo;
 
+import java.util.List;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
 @Entity
 @Table (name="disciplina")
 public class Disciplina {
+	
 	@Id
 	private String id;
 	
 	@Column
-	private String matricula;
-	
-	@Column
 	private String nome;
+	
+	@OneToMany(mappedBy="disciplina")
+	private List <Assunto> assuntos;
 
-	public Disciplina(String id, String matricula, String nome) {
+	public Disciplina(String id, String nome) {
 		super();
 		this.id = id;
-		this.matricula = matricula;
 		this.nome = nome;
 	}
 
@@ -37,20 +40,20 @@ public class Disciplina {
 		this.id = id;
 	}
 
-	public String getMatricula() {
-		return matricula;
-	}
-
-	public void setMatricula(String matricula) {
-		this.matricula = matricula;
-	}
-
 	public String getNome() {
 		return nome;
 	}
 
 	public void setNome(String nome) {
 		this.nome = nome;
+	}
+
+	public List<Assunto> getAssuntos() {
+		return assuntos;
+	}
+
+	public void setAssuntos(List<Assunto> assuntos) {
+		this.assuntos = assuntos;
 	}
 
 	@Override

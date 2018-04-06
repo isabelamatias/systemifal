@@ -13,15 +13,15 @@ public class Curso {
 	private String id;
 	
 	@Column
-	private String matricula;
+	private String disciplina;
 	
 	@Column
 	private String nome;
 
-	public Curso(String id, String matricula, String nome) {
+	public Curso(String id, String disciplina, String nome) {
 		super();
 		this.id = id;
-		this.matricula = matricula;
+		this.disciplina = disciplina;
 		this.nome = nome;
 	}
 
@@ -38,12 +38,12 @@ public class Curso {
 		this.id = id;
 	}
 
-	public String getMatricula() {
-		return matricula;
+	public String getdisciplina() {
+		return disciplina;
 	}
 
-	public void setMatricula(String matricula) {
-		this.matricula = matricula;
+	public void setDisciplina(String disciplina) {
+		this.disciplina = disciplina;
 	}
 
 	public String getNome() {
@@ -56,7 +56,7 @@ public class Curso {
 
 	@Override
 	public String toString() {
-		return "Curso [id=" + id + ", matricula=" + matricula + ", nome=" + nome + "]";
+		return "Curso [id=" + id + ", disciplina=" + disciplina + ", nome=" + nome + "]";
 	}
 	
 	

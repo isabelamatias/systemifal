@@ -1,5 +1,7 @@
 package br.edu.ifal.systemifal.modelo;
 
+import java.util.ArrayList;
+import java.util.List;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
@@ -16,13 +18,13 @@ public class Nota {
 	@ManyToOne
 	private Aluno aluno;
 	
-	
 	@ManyToOne
 	private Disciplina disciplina;
 	
 	@Column
 	private double valor;
 	
+	private List<Double> notas = new ArrayList<Double>();
 	
 	public Nota(int id, Aluno aluno, Disciplina disciplina, double valor) {
 		super();
@@ -37,6 +39,8 @@ public class Nota {
 		super();
 	}
 
+
+	
 
 	public int getId() {
 		return id;
@@ -76,12 +80,12 @@ public class Nota {
 	public void setValor(double valor) {
 		this.valor = valor;
 	}
+	
 
-	
+			
 		
-	
-	
-	
+
+
 	
 
 }

@@ -1,72 +1,38 @@
 package br.edu.ifal.systemifal.modelo;
 
-import javax.persistence.Column;
+import java.util.List;
+
 import javax.persistence.Entity;
-import javax.persistence.Id;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
 @Entity
 @Table(name="aluno")
-public class Aluno {
+public class Aluno extends Pessoa {
 	
-	@Id
-	private String id;
-	
-	@Column
-	private String matricula;
-	
-	@Column
-	private String nome;
-	
+	@OneToMany
+	private List<Professor> professor;
 	
 	public Aluno(String id, String matricula, String nome) {
-		super();
-		this.id = id;
-		this.matricula = matricula;
-		this.nome = nome;
+		setNome(nome);
+		setId(id);
+		setMatricula(matricula);
 	}
-
 
 	public Aluno() {
 		super();
-		
-			}
-
-
-	public String getId() {
-		return id;
+	}
+	public List<Professor> getProfessor() {
+		return professor;
 	}
 
-
-	public void setId(String id) {
-		this.id = id;
+	public void setProfessor(List<Professor> professor) {
+		this.professor = professor;
 	}
+	
 
+	
 
-	public String getMatricula() {
-		return matricula;
-	}
-
-
-	public void setMatricula(String matricula) {
-		this.matricula = matricula;
-	}
-
-
-	public String getNome() {
-		return nome;
-	}
-
-
-	public void setNome(String nome) {
-		this.nome = nome;
-	}
-
-
-	@Override
-	public String toString() {
-		return "Aluno [id=" + id + ", matricula=" + matricula + ", nome=" + nome + "]";
-	}
 	
 	
 	

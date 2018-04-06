@@ -1,59 +1,48 @@
 package br.edu.ifal.systemifal.modelo;
 
+import java.util.List;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
-import javax.persistence.Id;
+import javax.persistence.EnumType;
+import javax.persistence.Enumerated;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
 @Entity
 @Table(name="professor")
-public class Professor {
+public class Professor extends Pessoa{
 	
-	@Id
-	private String id;
+	@OneToMany
+	private List<Disciplina> disciplinas;
+	private CargoProfessor cargoProfessor;
 	
-	@Column
-	private String nome;
-
 	public Professor(String id, String nome) {
-		super();
-		this.id = id;
-		this.nome = nome;
+		setNome(nome);
+		setId(id);
 	}
 
 	public Professor() {
 		super();
-		// TODO Auto-generated constructor stub
 	}
 	
 
-	public String getId() {
-		return id;
+	public List<Disciplina> getDisciplinas() {
+		return disciplinas;
 	}
 
-	public void setId(String id) {
-		this.id = id;
+	public void setDisciplinas(List<Disciplina> disciplinas) {
+		this.disciplinas = disciplinas;
+	}
+	@Column(name = "cargo_professor", nullable = false)
+	@Enumerated(EnumType.STRING)
+	public CargoProfessor getCargoProfessor() {
+		return cargoProfessor;
 	}
 
-	public String getNome() {
-		return nome;
+	public void setCargoProfessor(CargoProfessor cargoProfessor) {
+		this.cargoProfessor = cargoProfessor;
 	}
-
-	public void setNome(String nome) {
-		this.nome = nome;
-	}
-
-	@Override
-	public String toString() {
-		return "Professor [id=" + id + ", nome=" + nome +"]";
-	}
-	
-
-	
-	
-	
-	
-	
 	
 
 }
