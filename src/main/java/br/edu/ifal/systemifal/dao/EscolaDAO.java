@@ -49,7 +49,7 @@ public class EscolaDAO implements DAOInterface<Escola, String>{
 		return escola;
 	}
 
-	public void deletar(Escola escola) {
+	public void remover(Escola escola) {
 		iniciarConexao();
 		em.remove(escola);
 		fecharConexao();
@@ -60,9 +60,15 @@ public class EscolaDAO implements DAOInterface<Escola, String>{
 		return null;
 	}
 
-	public void deletarTodos() {
+	public void removerTodos() {
 		// TODO Auto-generated method stub
 		
 	}
+
+	
+	
+
+	
+	
 
 }
