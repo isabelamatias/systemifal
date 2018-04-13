@@ -53,7 +53,7 @@ public class ProfessorDAO implements DAOInterface<Professor, String>{
 		return professor;
 	}
 
-	public void deletar(Professor professor) {
+	public void removeProfessor(Professor professor) {
 		iniciarConexao();
 		em.remove(professor);
 		fecharConexao();
@@ -64,7 +64,13 @@ public class ProfessorDAO implements DAOInterface<Professor, String>{
 		return null;
 	}
 
-	public void deletarTodos() {
+	public void removerTodos() {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void remover(Professor entity) {
 		// TODO Auto-generated method stub
 		
 	}

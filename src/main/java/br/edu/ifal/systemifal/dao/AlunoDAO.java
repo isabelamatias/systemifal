@@ -8,7 +8,7 @@ import javax.persistence.Persistence;
 
 import br.edu.ifal.systemifal.modelo.Aluno;
 
-public class AlunoDAO implements DAOInterface<Aluno, String>{
+public class AlunoDAO implements DAOInterface<Aluno, String> {
 	
 	
 	private final String PERSISTENCE_UNIT_NAME = "psunit1";
@@ -52,7 +52,7 @@ public class AlunoDAO implements DAOInterface<Aluno, String>{
 		return aluno;
 	}
 
-	public void deletar(Aluno aluno) {
+	public void remover(Aluno aluno) {
 		iniciarConexao();
 		em.remove(aluno);
 		fecharConexao();
@@ -63,11 +63,12 @@ public class AlunoDAO implements DAOInterface<Aluno, String>{
 		return null;
 	}
 
-	public void deletarTodos() {
+	public void removerTodos() {
 		// TODO Auto-generated method stub
 		
 	}
 
+	
 		
 	
 

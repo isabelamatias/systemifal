@@ -53,7 +53,7 @@ public class CursoDAO implements DAOInterface<Curso, String>{
 		return curso;
 	}
 
-	public void deletar(Curso curso) {
+	public void remover(Curso curso) {
 		iniciarConexao();
 		em.remove(curso);
 		fecharConexao();
@@ -64,7 +64,7 @@ public class CursoDAO implements DAOInterface<Curso, String>{
 		return null;
 	}
 
-	public void deletarTodos() {
+	public void removerTodos() {
 		// TODO Auto-generated method stub
 		
 	}
