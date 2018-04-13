@@ -2,13 +2,26 @@ package br.edu.ifal.systemifal.modelo;
 
 import java.util.List;
 
+import javax.persistence.Column;
+import javax.persistence.DiscriminatorValue;
 import javax.persistence.Entity;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
+
 @Entity
 @Table(name="aluno")
-public class Aluno extends Pessoa {
+@DiscriminatorValue ("A")
+public class Aluno extends Pessoa{
+	
+
+	
+	@Column
+	private String matricula;
+	
+	@Column
+	private String nome;
+
 	
 	@OneToMany
 	private List<Professor> professor;

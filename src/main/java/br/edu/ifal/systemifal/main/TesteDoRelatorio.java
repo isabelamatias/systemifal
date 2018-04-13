@@ -22,7 +22,7 @@ public class TesteDoRelatorio {
 		alunos.add(jose);
 		alunos.add(tereza);
 		
-		Disciplina artes = new Disciplina("2","12556","artes");
+		Disciplina artes = new Disciplina("2","artes");
 		
 		List<Nota> notas = new ArrayList<Nota>();
 		notas.add(new Nota(1, ana, artes, 2.5));

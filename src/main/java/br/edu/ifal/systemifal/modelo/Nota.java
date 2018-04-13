@@ -4,6 +4,8 @@ import java.util.ArrayList;
 import java.util.List;
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
@@ -13,6 +15,7 @@ import javax.persistence.Table;
 public class Nota {
 	
 	@Id
+	@GeneratedValue(strategy= GenerationType.AUTO)
 	private int id;
 	
 	@ManyToOne
@@ -22,7 +25,7 @@ public class Nota {
 	private Disciplina disciplina;
 	
 	@Column
-	private double valor;
+	private Double valor;
 	
 	private List<Double> notas = new ArrayList<Double>();
 	
@@ -72,12 +75,12 @@ public class Nota {
 	}
 
 
-	public double getValor() {
+	public Double getValor() {
 		return valor;
 	}
 
 
-	public void setValor(double valor) {
+	public void setValor(Double valor) {
 		this.valor = valor;
 	}
 	
