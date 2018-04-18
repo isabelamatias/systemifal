@@ -16,6 +16,7 @@
 		<class>br.edu.ifal.systemifal.modelo.Assunto</class>
 		
 		
+		
         <properties>
         	<property name="hibernate.connection.driver_class" value="com.mysql.jdbc.Driver"/>
         	

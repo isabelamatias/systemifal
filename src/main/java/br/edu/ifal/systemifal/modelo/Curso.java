@@ -1,10 +1,13 @@
 package br.edu.ifal.systemifal.modelo;
 
+import java.util.List;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
 @Entity
@@ -15,13 +18,13 @@ public class Curso {
 	@GeneratedValue(strategy= GenerationType.AUTO)
 	private String id;
 	
-	@Column
-	private String disciplina;
+	@OneToMany
+	private List<Disciplina> disciplina;
 	
 	@Column
 	private String nome;
 
-	public Curso(String id, String disciplina, String nome) {
+	public Curso(String id, List<Disciplina> disciplina, String nome) {
 		super();
 		this.id = id;
 		this.disciplina = disciplina;
@@ -41,11 +44,11 @@ public class Curso {
 		this.id = id;
 	}
 
-	public String getdisciplina() {
+	public List<Disciplina> getdisciplina() {
 		return disciplina;
 	}
 
-	public void setDisciplina(String disciplina) {
+	public void setDisciplina(List<Disciplina> disciplina) {
 		this.disciplina = disciplina;
 	}
 

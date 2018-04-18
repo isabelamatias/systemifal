@@ -10,7 +10,7 @@ import javax.persistence.InheritanceType;
 import javax.persistence.Table;
 
 @Entity
-@Table( name = "pessoa")
+@Table(name = "pessoa")
 @Inheritance (strategy=InheritanceType.SINGLE_TABLE)
 @DiscriminatorColumn(name = "cargo")
 public class Pessoa {
@@ -18,15 +18,21 @@ public class Pessoa {
 	@Id
 	@GeneratedValue(strategy= GenerationType.AUTO)
 	private String id;
+	
 	private String nome;
-	private String matricula;
 	
+	private String cpf;
 	
-	public String getMatricula() {
-		return matricula;
+	public Pessoa() {
+		super();
+		// TODO Auto-generated constructor stub
 	}
-	public void setMatricula(String matricula) {
-		this.matricula = matricula;
+	
+	public String getCpf() {
+		return cpf;
+	}
+	public void setCpf(String cpf) {
+		this.cpf = cpf;
 	}
 	public String getId() {
 		return id;
@@ -43,7 +49,7 @@ public class Pessoa {
 	
 	@Override
 	public String toString() {
-		return "Pessoa [id=" + id + ", nome=" + nome + ", matricula=" + matricula + "]";
+		return "Pessoa [id=" + id + ", nome=" + nome + ", cpf=" + cpf + "]";
 	}
 	
 

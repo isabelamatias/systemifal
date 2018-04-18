@@ -26,7 +26,7 @@ public class RelatorioTest {
 	public void criacaoDasEntidadesParaOsTestes() {
 		
 		this.alunos = new ArrayList<Aluno>();
-		this.professor = new Professor("2", "Célia");
+		this.professor = new Professor("2","1223", "Célia");
 		this.disciplina = new Disciplina("2","artes");
 		this.notas = new ArrayList<Nota>();
 		this.relatorio = new Relatorio ();

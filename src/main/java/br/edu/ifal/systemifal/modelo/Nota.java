@@ -2,7 +2,9 @@ package br.edu.ifal.systemifal.modelo;
 
 import java.util.ArrayList;
 import java.util.List;
+
 import javax.persistence.Column;
+import javax.persistence.ElementCollection;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -27,6 +29,7 @@ public class Nota {
 	@Column
 	private Double valor;
 	
+	@ElementCollection
 	private List<Double> notas = new ArrayList<Double>();
 	
 	public Nota(int id, Aluno aluno, Disciplina disciplina, double valor) {
@@ -35,11 +38,17 @@ public class Nota {
 		this.aluno = aluno;
 		this.disciplina = disciplina;
 		this.valor = valor;
+		this.notas = new ArrayList<Double>();
 	}
 
 
 	public Nota() {
 		super();
+		this.notas = new ArrayList<Double>();
+	}
+	
+	public void adiconarNota(double nota){
+		notas.add(new Double(nota));		
 	}
 
 
@@ -83,12 +92,15 @@ public class Nota {
 	public void setValor(Double valor) {
 		this.valor = valor;
 	}
+
+
+	public List<Double> getNotas() {
+		return notas;
+	}
+
+
+	public void setNotas(List<Double> notas) {
+		this.notas = notas;
+	}
 	
-
-			
-		
-
-
-	
-
 }

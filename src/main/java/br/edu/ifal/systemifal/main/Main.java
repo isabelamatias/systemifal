@@ -8,10 +8,10 @@ public class Main {
 
 	public static void main(String[] args) {
 		
-		Aluno aluno = new Aluno("10", "13254", "Zezinho da Silva");
+		Aluno aluno = new Aluno("12", "1111", "Bruna da Silva");
 		
 		
-		Professor p = new Professor();
+		//Professor p = new Professor();
 		
 		AlunoDAO dao = new AlunoDAO();
 		dao.salvar(aluno);

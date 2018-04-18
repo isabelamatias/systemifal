@@ -1,10 +1,13 @@
 package br.edu.ifal.systemifal.modelo;
 
+import java.util.List;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
 @Entity
@@ -17,6 +20,14 @@ public class Escola {
 	
 	@Column
 	private String nome;
+	
+	@OneToMany
+	private List<Curso> cursos;
+	
+	@OneToMany
+	private List<Professor> professores;
+	
+	
 
 	public Escola(String id, String nome) {
 		super();
@@ -43,6 +54,22 @@ public class Escola {
 
 	public void setNome(String nome) {
 		this.nome = nome;
+	}
+
+	public List<Curso> getCursos() {
+		return cursos;
+	}
+
+	public void setCursos(List<Curso> cursos) {
+		this.cursos = cursos;
+	}
+
+	public List<Professor> getProfessores() {
+		return professores;
+	}
+
+	public void setProfessores(List<Professor> professores) {
+		this.professores = professores;
 	}
 
 	@Override

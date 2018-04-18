@@ -69,7 +69,6 @@ public class ProfessorDAO implements DAOInterface<Professor, String>{
 		
 	}
 
-	@Override
 	public void remover(Professor entity) {
 		// TODO Auto-generated method stub
 		

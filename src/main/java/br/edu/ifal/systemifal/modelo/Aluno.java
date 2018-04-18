@@ -10,43 +10,24 @@ import javax.persistence.Table;
 
 
 @Entity
-@Table(name="aluno")
 @DiscriminatorValue ("A")
 public class Aluno extends Pessoa{
-	
-
-	
+		
 	@Column
 	private String matricula;
-	
-	@Column
-	private String nome;
 
 	
-	@OneToMany
-	private List<Professor> professor;
+
 	
-	public Aluno(String id, String matricula, String nome) {
+	public Aluno(String id, String cpf, String nome) {
 		setNome(nome);
 		setId(id);
-		setMatricula(matricula);
+		setCpf(cpf);
 	}
 
 	public Aluno() {
 		super();
 	}
-	public List<Professor> getProfessor() {
-		return professor;
-	}
-
-	public void setProfessor(List<Professor> professor) {
-		this.professor = professor;
-	}
-	
-
-	
-
-	
 	
 	
 

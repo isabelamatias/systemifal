@@ -15,7 +15,6 @@ import javax.persistence.Id;
 import javax.persistence.Table;
 
 @Entity
-@Table(name="professor")
 @DiscriminatorValue ("P")
 public class Professor extends Pessoa{
 	
@@ -27,9 +26,10 @@ public class Professor extends Pessoa{
 	@Enumerated(EnumType.STRING)
 	private CargoProfessor cargoProfessor;
 
-	public Professor(String id, String nome) {
+	public Professor(String id, String nome, String cpf) {
 		setNome(nome);
 		setId(id);
+		setCpf(cpf);
 	}
 
 	public Professor() {
