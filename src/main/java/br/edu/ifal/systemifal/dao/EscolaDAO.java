@@ -49,7 +49,7 @@ public class EscolaDAO implements DAOInterface<Escola, String>{
 		return escola;
 	}
 
-	public void remover(Escola escola) {
+	public void remove(Escola escola) {
 		iniciarConexao();
 		em.remove(escola);
 		fecharConexao();

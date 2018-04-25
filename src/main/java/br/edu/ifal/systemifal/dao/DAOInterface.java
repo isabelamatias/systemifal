@@ -10,7 +10,7 @@ public interface DAOInterface<T, Id extends Serializable> {
 	public void salvar(T entity);
 	public void atualizar(T entity);
 	public  T buscarPorId(Id id);
-	public void remover(T entity);
+	public void remove(T entity);
 	public List<T> buscarTodos();
 	public void removerTodos();
 	

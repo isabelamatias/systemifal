@@ -53,7 +53,7 @@ public class CursoDAO implements DAOInterface<Curso, String>{
 		return curso;
 	}
 
-	public void remover(Curso curso) {
+	public void remove(Curso curso) {
 		iniciarConexao();
 		em.remove(curso);
 		fecharConexao();

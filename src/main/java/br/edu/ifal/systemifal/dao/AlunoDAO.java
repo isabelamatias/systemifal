@@ -52,7 +52,7 @@ public class AlunoDAO implements DAOInterface<Aluno, String> {
 		return aluno;
 	}
 
-	public void remover(Aluno aluno) {
+	public void remove(Aluno aluno) {
 		iniciarConexao();
 		em.remove(aluno);
 		fecharConexao();

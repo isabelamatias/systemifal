@@ -52,7 +52,7 @@ public class DisciplinaDAO implements DAOInterface<Disciplina, String>{
 		return null;
 	}
 
-	public void remover(Disciplina disciplina) {
+	public void remove(Disciplina disciplina) {
 		iniciarConexao();
 		em.remove(disciplina);
 		fecharConexao();
