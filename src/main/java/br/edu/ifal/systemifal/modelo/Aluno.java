@@ -17,11 +17,14 @@ public class Aluno extends Pessoa{
 	private String matricula;
 
 	
-
-	
-	public Aluno(String id, String cpf, String nome) {
+	public Aluno(String cpf, String nome) {
 		setNome(nome);
+		setCpf(cpf);
+	}
+	
+	public Aluno(int id, String cpf, String nome) {
 		setId(id);
+		setNome(nome);
 		setCpf(cpf);
 	}
 

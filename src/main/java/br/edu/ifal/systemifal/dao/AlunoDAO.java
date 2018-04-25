@@ -5,6 +5,7 @@ import java.util.List;
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
 import javax.persistence.Persistence;
+import javax.transaction.Transactional;
 
 import br.edu.ifal.systemifal.modelo.Aluno;
 
@@ -29,7 +30,7 @@ public class AlunoDAO implements DAOInterface<Aluno, String> {
 		em.close();
 	}
 	
-	
+	@Transactional
 	public void salvar(Aluno aluno) {
 		iniciarConexao();
 		em.persist(aluno);
@@ -47,14 +48,16 @@ public class AlunoDAO implements DAOInterface<Aluno, String> {
 
 	public Aluno buscarPorId(String id) {
 		iniciarConexao();
-		Aluno aluno = em.find(Aluno.class, id);
+		Aluno aluno = em.find(Aluno.class, Integer.parseInt(id));
 		fecharConexao();
 		return aluno;
 	}
 
+	@Transactional
 	public void remove(Aluno aluno) {
 		iniciarConexao();
-		em.remove(aluno);
+		Aluno aluno2 = em.merge(aluno);
+		em.remove(aluno2);
 		fecharConexao();
 	}
 

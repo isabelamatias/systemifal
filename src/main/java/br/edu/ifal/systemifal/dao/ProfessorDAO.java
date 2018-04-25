@@ -5,7 +5,7 @@ import java.util.List;
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
 import javax.persistence.Persistence;
-
+import javax.transaction.Transactional;
 
 import br.edu.ifal.systemifal.modelo.Professor;
 
@@ -30,7 +30,7 @@ public class ProfessorDAO implements DAOInterface<Professor, String>{
 		em.close();
 	}
 	
-	
+	@Transactional
 	public void salvar(Professor professor) {
 		iniciarConexao();
 		em.persist(professor);
@@ -53,9 +53,11 @@ public class ProfessorDAO implements DAOInterface<Professor, String>{
 		return professor;
 	}
 
+	@Transactional
 	public void removeProfessor(Professor professor) {
 		iniciarConexao();
-		em.remove(professor);
+		Professor professor2 = em.merge(professor);
+		em.remove(professor2);
 		fecharConexao();
 	}
 

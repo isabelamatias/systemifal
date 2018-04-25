@@ -17,7 +17,7 @@ public class Pessoa {
 
 	@Id
 	@GeneratedValue(strategy= GenerationType.AUTO)
-	private String id;
+	private int id;
 	
 	private String nome;
 	
@@ -34,10 +34,10 @@ public class Pessoa {
 	public void setCpf(String cpf) {
 		this.cpf = cpf;
 	}
-	public String getId() {
+	public int getId() {
 		return id;
 	}
-	public void setId(String id) {
+	public void setId(int id) {
 		this.id = id;
 	}
 	public String getNome() {

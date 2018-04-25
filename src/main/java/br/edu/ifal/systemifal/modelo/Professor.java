@@ -22,11 +22,11 @@ public class Professor extends Pessoa{
 	@OneToMany
 	private List<Disciplina> disciplinas;
 	
-	@Column(name = "cargo_professor", nullable = false)
+	@Column(name = "cargo_professor")
 	@Enumerated(EnumType.STRING)
-	private CargoProfessor cargoProfessor;
+	private CargoProfessor cargoProfessor = CargoProfessor.EFETIVO;
 
-	public Professor(String id, String nome, String cpf) {
+	public Professor(int id, String nome, String cpf) {
 		setNome(nome);
 		setId(id);
 		setCpf(cpf);

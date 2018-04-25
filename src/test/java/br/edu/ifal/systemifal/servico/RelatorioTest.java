@@ -26,15 +26,15 @@ public class RelatorioTest {
 	public void criacaoDasEntidadesParaOsTestes() {
 		
 		this.alunos = new ArrayList<Aluno>();
-		this.professor = new Professor("2","1223", "Célia");
+		this.professor = new Professor(2,"1223", "Célia");
 		this.disciplina = new Disciplina("2","artes");
 		this.notas = new ArrayList<Nota>();
 		this.relatorio = new Relatorio ();
 		
-		Aluno ana = new Aluno("20","123456","Ana");
-		Aluno jose = new Aluno("10","12563","José");
-		Aluno tereza = new Aluno("30","158936","Tereza");
-		Aluno maria = new Aluno ("15", "145235", "Maria"); 
+		Aluno ana = new Aluno(20,"123456","Ana");
+		Aluno jose = new Aluno(10,"12563","José");
+		Aluno tereza = new Aluno(30,"158936","Tereza");
+		Aluno maria = new Aluno (15, "145235", "Maria"); 
 		alunos.add(ana);
 		alunos.add(jose);
 		alunos.add(tereza);

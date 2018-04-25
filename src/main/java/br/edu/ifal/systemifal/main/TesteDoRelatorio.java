@@ -15,9 +15,9 @@ public class TesteDoRelatorio {
 		List<Aluno> alunos = new ArrayList<Aluno>();
 		
 	
-		Aluno ana = new Aluno("20","123456","Ana");
-		Aluno jose = new Aluno("10","12563","José");
-		Aluno tereza = new Aluno("30","158936","Tereza");
+		Aluno ana = new Aluno(20,"123456","Ana");
+		Aluno jose = new Aluno(10,"12563","José");
+		Aluno tereza = new Aluno(30,"158936","Tereza");
 		alunos.add(ana);
 		alunos.add(jose);
 		alunos.add(tereza);
